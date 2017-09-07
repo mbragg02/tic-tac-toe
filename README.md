@@ -6,7 +6,6 @@
 ### Run
 `java -jar target/tic-tac-toe-0.0.1-SNAPSHOT.jar`
 
-
-### View
+### Test
 There is a swagger ui available at:
-`http://localhost:8080//swagger-ui.html`
+`http://localhost:8080/swagger-ui.html`
