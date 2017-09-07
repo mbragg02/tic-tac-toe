@@ -121,11 +121,13 @@ public class GameServiceImpl implements GameService {
         List<Game> games = (List<Game>) gameRepository.findAll();
 
         GamesSummaryResponse gamesSummaryResponse = new GamesSummaryResponse();
+
         for (Game game: games) {
             GameSummary gameSummary = new GameSummary();
             gameSummary.setGameId(game.getId());
             gameSummary.setGameStatus(game.getStatus());
-            gameSummary.setUserIds(Arrays.asList(game.getPlayerOne().getUser().getId(),
+            gameSummary.setUserIds(Arrays.asList(
+                    game.getPlayerOne().getUser().getId(),
                     game.getPlayerTwo().getUser().getId()));
             gamesSummaryResponse.addGameSummary(gameSummary);
         }

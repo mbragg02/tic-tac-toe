@@ -222,9 +222,9 @@ public class GameServiceImplTest {
         when(gameRepository.findAll()).thenReturn(Collections.singletonList(game));
         GamesSummaryResponse actualGamesSummaryResponse = gameService.findAll();
 
-        assertEquals(1, actualGamesSummaryResponse.getGameSummaries().size());
+        assertEquals(1, actualGamesSummaryResponse.getGames().size());
 
-        GameSummary gameSummary1 = actualGamesSummaryResponse.getGameSummaries().get(0);
+        GameSummary gameSummary1 = actualGamesSummaryResponse.getGames().get(0);
         assertEquals(expectedGameSummary.getGameId(), gameSummary1.getGameId());
         assertEquals(expectedGameSummary.getGameStatus(), gameSummary1.getGameStatus());
         assertEquals(2, gameSummary1.getUserIds().size());

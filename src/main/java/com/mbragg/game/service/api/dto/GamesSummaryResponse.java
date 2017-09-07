@@ -8,17 +8,17 @@ import java.util.List;
  */
 public class GamesSummaryResponse {
 
-    private List<GameSummary> gameSummaries = new ArrayList<>();
+    private List<GameSummary> games = new ArrayList<>();
 
-    public List<GameSummary> getGameSummaries() {
-        return gameSummaries;
+    public List<GameSummary> getGames() {
+        return games;
     }
 
     public void addGameSummary(GameSummary gameSummary) {
-        this.gameSummaries.add(gameSummary);
+        this.games.add(gameSummary);
     }
 
-    public void setGameSummaries(List<GameSummary> gameSummaries) {
-        this.gameSummaries = gameSummaries;
+    public void setGames(List<GameSummary> games) {
+        this.games = games;
     }
 }

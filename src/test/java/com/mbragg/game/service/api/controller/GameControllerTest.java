@@ -75,7 +75,7 @@ public class GameControllerTest {
         this.mvc.perform(get("/game/")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"gameSummaries\":[{\"gameId\":1,\"userIds\":[1,2],\"gameStatus\":\"IN_PROGRESS\"}]}"));
+                .andExpect(content().json("{\"games\":[{\"gameId\":1,\"userIds\":[1,2],\"gameStatus\":\"IN_PROGRESS\"}]}"));
     }
 
     @Test
