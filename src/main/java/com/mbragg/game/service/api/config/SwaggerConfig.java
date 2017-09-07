@@ -30,7 +30,7 @@ public class SwaggerConfig {
                 "Spring Boot REST API for Tic-Tac-Toe",
                 "1.0",
                 "Terms of service",
-                new Contact("Michael Bragg", "https://github.com/mbragg02", "mikeabragg@icloud.com"),
+                new Contact("Michael Bragg", "https://github.com/mbragg02/tic-tac-toe", "mikeabragg@icloud.com"),
                 "Apache License Version 2.0",
                 "https://www.apache.org/licenses/LICENSE-2.0",
                 Collections.emptyList());
