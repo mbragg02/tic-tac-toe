@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import static org.springframework.util.Assert.*;
+
 /**
  * Exposes API for interacting with the Game domain.
  */
@@ -35,8 +37,8 @@ public class GameController {
     @ApiOperation(value = "Find a game")
     @RequestMapping(value = "/{gameId}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public GameResponse findOne(@PathVariable("gameId") final Long uuid) {
-        return gameService.findOne(uuid);
+    public GameResponse findOne(@PathVariable("gameId") final Long id) {
+        return gameService.findOne(id);
     }
 
     @ApiOperation(value = "Find all games")
@@ -49,7 +51,9 @@ public class GameController {
     @ApiOperation(value = "Perform a move in a game")
     @RequestMapping(value = "/{gameId}/move", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
-    public GameResponse move(@RequestBody MoveRequest move) {
+    public GameResponse move(@PathVariable("gameId") final Long id, @RequestBody MoveRequest move) {
+        isTrue(id.equals(move.getGameId()), "Path and body values for game id should match.");
+
         return gameService.move(move);
     }
 
